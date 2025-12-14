@@ -1,16 +1,51 @@
-# React + Vite
+# Add To Cart Using Route
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project demonstrates implementing an "Add to Cart" functionality using routing mechanisms.
 
-Currently, two official plugins are available:
+## Features
+- Route-based cart management
+- Product addition to cart
+- Navigation between pages
+- State management through routing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## React Compiler
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### Running the Project
+```bash
+npm start
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+```
+AddToCartUsingRoute/
+├── src/
+├── public/
+├── package.json
+└── README.md
+```
+
+## Live URL
+https://playful-granita-d6a8e7.netlify.app/
+
+## Usage
+1. Browse products
+2. Click "Add to Cart" button
+3. View cart via route navigation
+
+## Technologies Used
+- React (or your framework)
+- React Router
+- State Management
+
+## Contributing
+Pull requests are welcome. Please follow the coding standards.

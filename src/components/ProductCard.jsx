@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({ item, addOrRemoveFromCart, inCart }) => {
   return (
-    <article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700">
+    <article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 hover:shadow-2xl hover:translate-3d transition-all duration-300">
       <div className="bg-amber-100 p-8">
         <img
           class="object-contain h-45 w-full"

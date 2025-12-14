@@ -5,31 +5,41 @@ import Cart from "./pages/Cart";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import axios from "axios";
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  
+  const [cart, setCart] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
 
-  const fetchItems = async () => {
-    try {
-      const res = await axios.get("https://fakestoreapi.com/products");
-      setItems(res.data);
-    } catch (err) {
-      console.log("Error in fetching the Products", err);
-    }
+  
+
+  const addOrRemoveFromCart = (item) => {
+    const exists = cart.find((product) => product.id === item.id);
+    if (exists) {
+      setCart(cart.filter((product) => product.id !== item.id));
+      console.log("Removed from cart:", cart);
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+      console.log("Added to cart:", cart);
+    }   
   };
 
-  useEffect(() => {
-    fetchItems();
-  }, []);
+  // const inCart = ()=>{
+  //   const presentItemsInCart= cart.some((product) => product.id === item.id);
+  //   if(presentItemsInCart){
+  //     return true;
+  //   }else
+  //     return false;
+  // }
+
 
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar cartCount={cart.reduce((sum, i) => sum + i.quantity, 0)}  />
         <Routes>
-          <Route path="/" element={<ProductList items={items} />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<ProductList addOrRemoveFromCart={addOrRemoveFromCart} cart={cart}/>} />
+          <Route path="/cart" element={<Cart/>} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
